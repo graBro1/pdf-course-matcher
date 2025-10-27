@@ -13,13 +13,14 @@ export default function Home() {
               type="text" 
               id="courseName" 
               name="name"
-              className="p-4 rounded-lg bg-gray-900 m-2 h-10 w-200 border-gray-800 border" 
+              autoComplete="off"
+              className="p-4 rounded-lg bg-gray-900 m-2 h-10 w-200 border-gray-800 border focus:border-gray-700 focus:outline-none" 
               placeholder="Enter Course Name"
               />
               <textarea 
               id="courseDescription"
               name="description"
-              className="p-4 rounded-lg bg-gray-900 m-2 h-50 w-200 border border-gray-800 resize-none" 
+              className="p-4 rounded-lg bg-gray-900 m-2 h-50 w-200 border border-gray-800 focus:border-gray-700 focus:outline-none resize-none" 
               placeholder="Enter Course Description"
               ></textarea>
             </div>
@@ -35,7 +36,7 @@ export default function Home() {
             </div>
             <button 
             type="submit" 
-            className="px-5 py-1.5 m-6 rounded-lg bg-gray-800 mx-auto block text-center cursor-pointer border-gray-700 border text-lg font-bold"
+            className="px-5 py-1.5 m-6 rounded-lg bg-gray-800 mx-auto block text-center cursor-pointer border-gray-700 hover:bg-gray-900 border text-lg font-bold"
             >Submit</button>
           </form>
         </div>
