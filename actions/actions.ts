@@ -1,7 +1,7 @@
 'use server'
- import React from 'react'
+import React from 'react'
  
-export async function compare(formData: FormData) {
+export async function compare(previousState: unknown, formData: FormData) {
     
     try {
         
@@ -14,6 +14,10 @@ export async function compare(formData: FormData) {
             throw new Error(`${response.status}`)
 
         }
+
+        const data = await response.json()
+        
+        return(data)
 
     } catch(error) {
         console.log(error)
