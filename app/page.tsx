@@ -60,27 +60,45 @@ export default function Home() {
             disabled={isPending}
             className="px-5 py-1.5 m-2 rounded-lg bg-gray-800 mx-auto block text-center cursor-pointer border-gray-700 hover:bg-gray-900 border text-lg font-bold"
             >Submit</button>
-            {data && 
-            <div className="m-2">
-              <div className="p-2">
-                <span className="text-center block font-bold text-lg text-gray-300 p-2">Results</span>
-                <span className="text-center block mx-auto text-lg font-bold text-gray-300">
-                  Closest Match: <span className="text-gray-400">{data?.results[0].course.course_name}</span>
-                </span>
-                <span className="text-center block mx-auto text-lg font-bold text-gray-300">
-                  Confidence Score: <span className={`${scoreColor(data?.results[0].score)}`}>{data?.results[0].score}</span>
-                </span>
+
+            {isPending && 
+              <div className="m-4 text-center block font-bold text-lg text-gray-300 p-2">
+                Loading Results...
               </div>
-              <div className="p-2">
-                <span className="text-center block font-bold text-gray-400 p-2">Other Possible Matches</span>
-                <span className="text-center block mx-auto font-bold text-gray-300">
-                  {data?.results[1].course.course_name}: <span className={`${scoreColor(data?.results[1].score)}`}>{data?.results[1].score}</span>
-                </span>
-                <span className="text-center block mx-auto font-bold text-gray-300">
-                  {data?.results[2].course.course_name}: <span className={`${scoreColor(data?.results[2].score)}`}>{data?.results[2].score}</span>
-                </span>
+            }
+
+            {data && !data?.results[0] && !isPending &&
+              <div className="m-4 text-center block font-bold text-lg text-red-500 p-2">No Matches Found.</div>
+            }
+
+            {data?.results[0] && !isPending &&
+              <div className="m-2">
+                <div className="p-2">
+                  <span className="text-center block font-bold text-lg text-gray-300 p-2">Results</span>
+                  <span className="text-center block mx-auto text-lg font-bold text-gray-300">
+                    Closest Match: <span className="text-gray-400">{data?.results[0]?.course.course_name}</span>
+                  </span>
+                  <span className="text-center block mx-auto text-lg font-bold text-gray-300">
+                    Confidence Score: <span className={`${scoreColor(data?.results[0]?.score)}`}>{data?.results[0]?.score}</span>
+                  </span>
+                </div>
+
+                {data?.results[1] &&
+                  <div className="p-2">
+                    <span className="text-center block font-bold text-gray-400 p-2">Other Possible Matches</span>
+                    <span className="text-center block mx-auto font-bold text-gray-300">
+                      {data?.results[1]?.course.course_name}: <span className={`${scoreColor(data?.results[1]?.score)}`}>{data?.results[1]?.score}</span>
+                    </span>
+                    
+                    {data?.results[2] &&
+                      <span className="text-center block mx-auto font-bold text-gray-300">
+                        {data.results[2].course.course_name}: <span className={`${scoreColor(data.results[2].score)}`}>{data.results[2].score}</span>
+                      </span>
+                    }
+                  </div>
+                }
+
               </div>
-            </div>
             }
           </form>
           
