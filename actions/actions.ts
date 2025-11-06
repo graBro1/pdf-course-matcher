@@ -16,8 +16,10 @@ export async function compare(previousState: unknown, formData: FormData) {
         }
 
         const data = await response.json()
-        
-        return(data)
+
+        const fieldInfo = {name: formData.get("name") as string, description: formData.get("description") as string}
+
+        return{fieldInfo: fieldInfo, results: data}
 
     } catch(error) {
         console.log(error)
