@@ -22,8 +22,8 @@ export default function Home() {
             id="courseName" 
             name="name"
             autoComplete="off"
-            className="p-3 rounded-lg bg-gray-900 m-2 h-10 w-200 min-w-3/7 max-w-[85%] border-gray-800 border focus:border-gray-700 focus:outline-none user-invalid:border-red-500/80" 
-            placeholder="Enter Course Name"
+            className="p-3 rounded-lg bg-gray-900 m-2 h-10 w-200 min-w-3/7 max-w-[85%] border-gray-800 border focus:border-gray-700 focus:outline-none placeholder:text-gray-600 user-invalid:border-red-500/80" 
+            placeholder="Enter at least 5 characters"
             minLength={5}
             required
           />
@@ -33,8 +33,8 @@ export default function Home() {
             <textarea 
             id="courseDescription"
             name="description"
-            className="p-3 rounded-lg bg-gray-900 m-2 h-50 w-200 min-w-3/7 max-w-[85%] border border-gray-800 focus:border-gray-700 focus:outline-none resize-none user-invalid:border-red-500/80" 
-            placeholder="Enter Course Description"
+            className="p-3 rounded-lg bg-gray-900 m-2 h-50 w-200 min-w-3/7 max-w-[85%] border border-gray-800 focus:border-gray-700 focus:outline-none resize-none placeholder:text-gray-600 user-invalid:border-red-500/80" 
+            placeholder="Enter at least 20 characters"
             minLength={20}
             required
             ></textarea>
@@ -55,7 +55,7 @@ export default function Home() {
         <button 
         type="submit" 
         disabled={isPending}
-        className="px-5 py-1.5 m-2 rounded-lg bg-gray-800 mx-auto block text-center not-disabled:cursor-pointer border-gray-700 hover:enabled:bg-gray-900 border text-lg font-bol disabled:opacity-50"
+        className="px-5 py-1.5 m-2 rounded-lg bg-gray-800 mx-auto block text-center not-disabled:cursor-pointer border-gray-700 hover:enabled:bg-gray-900 border text-lg font-bol disabled:opacity-60"
         >Submit</button>
       </form>
 
