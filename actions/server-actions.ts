@@ -1,6 +1,8 @@
 'use server'
 import React from 'react'
- 
+
+
+// Fetches data to Python comparison script and returns best matches to the frontend 
 export async function compare(previousState: unknown, formData: FormData) {
     
     try {
