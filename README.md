@@ -12,3 +12,62 @@ This project was made with Next, Typescript, and Tailwind for the frontend, with
 
 Ollama: llama3.2 <br>
 SBERT: all-MiniLM-L6-v2
+
+## Prerequisites/Installation
+
+**Required:**
+
+Node.js: https://nodejs.org/en/download<br>
+Python: https://www.python.org/downloads/<br>
+Ollama: https://ollama.com/download<br>
+
+*note: 'python3' or 'pip3' may be required for the following commands based on installed versions.*
+
+**Preparation:**
+
+***Clone Repo<br>***
+```
+git clone https://github.com/graBro1/pdf-course-matcher/
+```
+***Create and Activate Virtual Environment<br>***
+```
+python -m venv .venv
+```
+Mac/Linux:
+```
+source .venv/bin/activate
+```
+Windows:
+```
+.venv/Scripts/activate
+```
+***Install Python Dependencies***
+```
+pip install -r requirements.txt
+```
+***Install Node Dependencies***
+```
+npm install
+```
+***Install Ollama Model***
+```
+ollama pull llama3.2
+```
+***Run Uvicorn Server***
+```
+uvicorn app.main:app --reload
+```
+***Run Next Development Environment***
+```
+npm run dev
+```
+or
+```
+npm run build
+npm start
+```
+
+**The app can be accessed at http://localhost:3000**
+
+
+
